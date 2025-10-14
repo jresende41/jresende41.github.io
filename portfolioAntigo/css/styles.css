@@ -1,0 +1,435 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonte padrão para todo o site */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #2D5273;
+    background-color: #F9F9F9;
+    overflow-x: hidden; /* Evita a faixa branca no lado direito */
+}
+
+/* Paleta de cores WBM */
+:root {
+    --primary-color: #3871C1;
+    --secondary-color: #82A8D9;
+    --accent-color: #062B5D;
+    --highlight-color: #82A8D9;
+    --dark-color: #2D5273;
+    --light-color: #FFFFFF;
+    --footer-bg: #e5f3ff;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+}
+
+/* Configurações do cabeçalho */
+header {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .logo img.logo-image {
+    height: 60px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+header .logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--light-color);
+}
+
+/* Menu padrão para desktop */
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    color: var(--light-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: var(--secondary-color);
+}
+
+/* Botão destacado no cabeçalho */
+.header-button {
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    color: var(--light-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.header-button:hover {
+    background-color: #e63c3c;
+}
+
+/* Botão hambúrguer para dispositivos móveis */
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--light-color);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Menu responsivo */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 150px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu a {
+        padding: 10px 15px;
+        color: var(--light-color);
+    }
+
+    .menu a:hover {
+        background-color: var(--secondary-color);
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .header-container, .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column {
+        flex: 1 1 100%;
+    }
+}
+
+/* Container e outras seções para responsividade geral */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* Hero section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.hero-content {
+    max-width: 100%;
+    padding: 40px;
+    background-color: #d2eafc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: var(--highlight-color);
+}
+
+.hero-content p {
+    font-size: 1rem;
+    color: var(--dark-color);
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.hero-content .buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+}
+
+.hero-content .btn-primary {
+    background-color: var(--accent-color);
+    color: var(--light-color);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero-content .btn-primary:hover {
+    background-color: #4b80d3;
+}
+
+/* Responsividade para o Hero section */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Blocos para Missão, Equipe e Serviços */
+.section {
+    padding: 60px 20px;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.mission-section,
+.team-container,
+.services-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    text-align: center;
+    animation: fadeInUp 1s ease forwards;
+}
+.services-description {
+    text-align: center;
+    margin-bottom: 20px; /* Ajuste conforme necessário */
+    font-size: 1rem; /* Ajuste do tamanho da fonte, se desejado */
+    color: var(--dark-color); /* Use uma cor apropriada da sua paleta */
+}
+
+
+.mission-item, .team-member, .service-box {
+    flex: 1 1 200px;
+    background-color: var(--light-color);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mission-item:hover, .team-member:hover, .service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.mission-item .mission-icon,
+.service-box .service-icon,
+.team-member img {
+    margin-bottom: 15px;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+
+.mission-item h4::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent-color);
+    margin: 8px auto;
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 4px solid var(--secondary-color);
+}
+.team-member h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color); /* Ajuste a cor conforme sua paleta */
+}
+.team-member .role {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--accent-color); /* Pode ser um tom ligeiramente diferente */
+}
+.team-member .responsibilities {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--dark-color);
+}
+
+
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 40px 20px;
+    text-align: left;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1 1 220px; /* Ajuste para acomodar quatro colunas */
+    margin: 10px 0;
+}
+
+.footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--light-color);
+    font-weight: bold;
+}
+
+.footer-column p, .footer-column a {
+    font-size: 1rem;
+    color: var(--light-color);
+    margin-bottom: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--secondary-color);
+}
+
+/* Remove as bolinhas da lista de suporte */
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+/* Redes sociais */
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    color: var(--light-color);
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+}
+
+/* Newsletter */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.newsletter-form button {
+    padding: 10px;
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: var(--highlight-color);
+}
+
+/* Responsividade do footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
